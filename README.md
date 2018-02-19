@@ -5,10 +5,9 @@ A <a href="https://github.com/MichMich/MagicMirror">MagicMirror</a> module to di
 ![preview](preview.png)
 
 ## Intensity and related icon
-![preview](preview.png)
+![preview](intensity.png)
 
 ## Using the module
-![preview](intensity.png)
 
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
@@ -29,7 +28,6 @@ modules: [
 
 The following properties can be configured:
 
-
 | Option                       | Default   | Description
 | ---------------------------- | --------- | -----------
 | `locationLongitude`          |           | Longitude for the location for which the pollen intensity will be shown
@@ -37,16 +35,17 @@ The following properties can be configured:
 | `noEmptyLines`               | true      | Show only lines in the table for pollen with intensity greater than none.
 | `pollenLayers`               | all types | List of pollen (see below) for which the intensity will be shown. Specify as a comma separated list, no spaces between values!
 
-|Possible pollen types:
-|----------------------
-|`Hasel'Pollenflug_Hasel,
-|`Erle'Pollenflug_Erle,
-|``Pollenflug_Esche,
-|``Pollenflug_Birke,
-|``Pollenflug_Graeser,
-|``Pollenflug_Roggen,
-|``Pollenflug_Beifuss,
-|``Pollenflug_Ambrosia
+
+| Tag for configuration | English name  | German name
+| --------------------- | ------------- | ----------------
+| `Pollenflug_Hasel`    | Hazel         | Hasel
+| `Pollenflug_Erle`     | Alder         | Erle
+| `Pollenflug_Esche`    | Ash           | Esche
+| `Pollenflug_Birke`    | Birch         | Birke
+| `Pollenflug_Graeser`  | Grass         | Graeser
+| `Pollenflug_Roggen`   | Rye           | Roggen
+| `Pollenflug_Beifuss`  | Mugwort       | Beifuss
+| `Pollenflug_Ambrosia` | Ragweed       | Ambrosia
 
 ## Installation of module and dependencies
 
