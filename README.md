@@ -33,6 +33,7 @@ The following properties can be configured:
 | `locationLongitude`          |           | Longitude for the location for which the pollen intensity will be shown
 | `locationLatitude`           |           | Latitude for the location for which the pollen intensity will be shown
 | `noEmptyLines`               | true      | Show only lines in the table for pollen with intensity greater than none.
+| `showPollenArea`             | true      | Prints forecast area above intensity table. 
 | `pollenLayers`               | all types | List of pollen (see below) for which the intensity will be shown. Specify as a comma separated list, no spaces between values!
 
 
@@ -55,11 +56,13 @@ The following properties can be configured:
 
     {
         module: "MMM-pollen",
-		position: 'middle_center',
-        config: {
+	position: 'middle_center',
+        header: 'pollen forecast',
+	config: {
 			locationLongitude: 6.77,
 			locationLatitude: 51.4,
 			noEmptyLines: true,
+			showPollenArea: true,
 			pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia"
         }
     },

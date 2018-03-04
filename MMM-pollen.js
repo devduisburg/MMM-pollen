@@ -2,6 +2,7 @@
 Module.register("MMM-pollen",{
 	// Module config defaults.
 	defaults: {
+		header: "Pollenflug",
 		updateInterval: 60*60*1000, 
 		animationSpeed: 1000,
 		lang: config.language,
@@ -10,6 +11,7 @@ Module.register("MMM-pollen",{
 		locationLongitude: 6.77,
 		locationLatitude: 51.4,
 		noEmptyLines: true,
+		showPollenArea: true,
 		pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia"
 	},
 
@@ -95,7 +97,7 @@ Module.register("MMM-pollen",{
 			var today = "";
 			var tomorrow = "";
 			var pollenArea = "";
-			this.msg = "<table><tr><th width=100>Pollen</th><th width=70>heute</th><th width=70>morgen</th>";
+			this.msg = "<table><tr><th align=left>Pollen</th><th width=70>heute</th><th width=70>morgen</th>";
 			for (i=0;i < data.features.length; i++) {
 				if (currentPollenName != data.features[i].properties.PARAMETER_NAME) {
 					this.addPollenRow(currentPollenName, today, tomorrow);
@@ -115,7 +117,7 @@ Module.register("MMM-pollen",{
 			}
 			this.addPollenRow(currentPollenName, today, tomorrow);
 			this.msg = this.msg + "</table>";
-			if (pollenArea != "") {
+			if (pollenArea != "" && this.config.showPollenArea) {
 				this.msg = "<div>" + pollenArea + "<br>" + this.msg + "<div>";
 			}
 			this.updateDom(this.config.animationSpeed);		
