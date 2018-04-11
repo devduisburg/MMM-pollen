@@ -156,6 +156,8 @@ Module.register("MMM-pollen",{
 				return "<div style=\"color:orange;transform:rotate(45deg);\" class=\"fa fa-arrow-right\"></div>";
 			case "gering":
 				return "<div style=\"color:yellow;\" class=\"fa fa-arrow-down\"></div>";
+			case "keine bis gering":
+				return "<div style=\"color:green;\" class=\"fa fa-arrow-down\"></div>";
 			case "keine":
 				return "<div style=\"color:DarkSlateGray;\" class=\"fa fa-smile-o\"></div>";
 		}
