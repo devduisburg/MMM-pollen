@@ -33,6 +33,7 @@ The following properties can be configured:
 | `locationLongitude`          |           | Longitude for the location for which the pollen intensity will be shown
 | `locationLatitude`           |           | Latitude for the location for which the pollen intensity will be shown
 | `noEmptyLines`               | true      | Show only lines in the table for pollen with intensity greater than none.
+| `showPollenArea`             | true      | Prints forecast area above intensity table.
 | `pollenLayers`               | all types | List of pollen (see below) for which the intensity will be shown. Specify as a comma separated list, no spaces between values!
 
 

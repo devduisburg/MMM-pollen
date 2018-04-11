@@ -10,7 +10,8 @@ Module.register("MMM-pollen",{
 		locationLongitude: 6.77,
 		locationLatitude: 51.4,
 		noEmptyLines: true,
-		pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia"
+		pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia",
+                showPollenArea: true
 	},
 
 	getScripts: function() {
@@ -95,7 +96,7 @@ Module.register("MMM-pollen",{
 			var today = "";
 			var tomorrow = "";
 			var pollenArea = "";
-			this.msg = "<table><tr><th width=100>Pollen</th><th width=70>heute</th><th width=70>morgen</th>";
+			this.msg = "<table><tr><th align=left>Pollen</th><th width=70>heute</th><th width=70>morgen</th>";
 			for (i=0;i < data.features.length; i++) {
 				if (currentPollenName != data.features[i].properties.PARAMETER_NAME) {
 					this.addPollenRow(currentPollenName, today, tomorrow);
@@ -109,7 +110,7 @@ Module.register("MMM-pollen",{
 				else {
 					tomorrow = data.features[i].properties.PARAMETER_VALUE;
 				}
-				if (pollenArea == "") {
+				if (pollenArea == "" && this.config.showPollenArea) {
 					pollenArea = data.features[i].properties.GEN;
 				}
 			}
