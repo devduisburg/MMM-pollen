@@ -2,6 +2,7 @@
 Module.register("MMM-pollen",{
 	// Module config defaults.
 	defaults: {
+		header: "Pollenflug",
 		updateInterval: 60*60*1000, 
 		animationSpeed: 1000,
 		lang: config.language,
@@ -10,8 +11,8 @@ Module.register("MMM-pollen",{
 		locationLongitude: 6.77,
 		locationLatitude: 51.4,
 		noEmptyLines: true,
-		pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia",
-                showPollenArea: true
+		showPollenArea: true,
+		pollenLayers: "Pollenflug_Hasel,Pollenflug_Erle,Pollenflug_Esche,Pollenflug_Birke,Pollenflug_Graeser,Pollenflug_Roggen,Pollenflug_Beifuss,Pollenflug_Ambrosia"
 	},
 
 	getScripts: function() {
@@ -116,7 +117,7 @@ Module.register("MMM-pollen",{
 			}
 			this.addPollenRow(currentPollenName, today, tomorrow);
 			this.msg = this.msg + "</table>";
-			if (pollenArea != "") {
+			if (pollenArea != "" && this.config.showPollenArea) {
 				this.msg = "<div>" + pollenArea + "<br>" + this.msg + "<div>";
 			}
 			this.updateDom(this.config.animationSpeed);		
