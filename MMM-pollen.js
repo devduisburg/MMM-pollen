@@ -132,7 +132,7 @@ Module.register("MMM-pollen",{
 			return;
 		}
 		// supress not relevant lines
-		if (this.config.noEmptyLines && today == "keine" && tomorrow == "keine") {
+		if (this.config.noEmptyLines && today == "keine" && (tomorrow === "keine" || tomorrow === "")) {
 			return;
 		}		
 		var colorToday = this.getPollenCell(today);
