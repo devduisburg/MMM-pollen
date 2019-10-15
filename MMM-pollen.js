@@ -24,7 +24,7 @@ Module.register("MMM-pollen",{
 	},
 
 	start: function() {
-		Log.error("Starting module: " + this.name);
+		Log.info("Starting module: " + this.name);
 		moment.locale(config.language);
 		this.top = 0.0;
 		this.left = 0.0;
