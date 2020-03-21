@@ -24,7 +24,7 @@ Module.register("MMM-pollen",{
 	},
 
 	start: function() {
-		Log.error("Starting module: " + this.name);
+		Log.info("Starting module: " + this.name);
 		moment.locale(config.language);
 		this.top = 0.0;
 		this.left = 0.0;
@@ -132,7 +132,7 @@ Module.register("MMM-pollen",{
 			return;
 		}
 		// supress not relevant lines
-		if (this.config.noEmptyLines && today == "keine" && tomorrow == "keine") {
+		if (this.config.noEmptyLines && today == "keine" && (tomorrow === "keine" || tomorrow === "")) {
 			return;
 		}		
 		var colorToday = this.getPollenCell(today);
